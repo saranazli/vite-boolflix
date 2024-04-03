@@ -1,25 +1,50 @@
 <script>
 
   import Main from './components/Main.vue';
-  import Footer from './components/Header.vue';
+  import Header from './components/Header.vue';
+  import { store } from './assets/data/store';
+  import axios from 'axios';
 
-  export default {
+  export default{
 
     components: {
+      Header,
+      Main
+    },
 
-      Main,
-      Footer
-
+    data() {
+      return{
+        store
+      }
+    },
+    methods:{
+      getApi(){
+        axios.get(store.apiUrl, {
+          params: {
+            api_key: '143eeaa2ea390065982ac4cac590ae6c'
+          }
+        })
+        .then(  result =>{
+          store.cardsMovie = result.data.results;
+          console.log(store.cardsMovie)
+        })
+        .catch( error => {
+          console.log('error')
+        })
+      }
+    },
+    mounted(){
+      this.getApi()
     }
   }
 
 </script>
 
 <template>
-  
-  <Main />
 
-  <Footer />
+  <Header @searchMovie="getApi" />
+
+  <Main />
 
 </template>
 

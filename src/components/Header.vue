@@ -14,11 +14,22 @@
 <template>
   
   <div class="d-flex">
+
     <h1>BOOLFLIX</h1>
 
     <div>
-      <input type="text" class="form-control" placeholder="search">
+      <input 
+      type="text" 
+      class="form-control" 
+      placeholder="search" 
+      v-model.trim="store.query"
+      >
     </div>
+
+    <button @click="$emit('searchMovie')">
+      GO
+    </button>
+    
   </div>
 
 
