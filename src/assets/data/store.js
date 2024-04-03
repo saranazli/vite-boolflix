@@ -6,8 +6,8 @@ export const store = reactive ({
   apiUrlSeries: 'https://api.themoviedb.org/3/search/tv',
   cardsMovie: [],
   cardsSeries: [],
+  searchingMovie: '',
   queryParams: {
-    apy_key: '143eeaa2ea390065982ac4cac590ae6c',
-    query:''
+    apy_key: '143eeaa2ea390065982ac4cac590ae6c'
   }
 })

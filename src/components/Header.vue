@@ -22,14 +22,14 @@
       type="text" 
       class="form-control" 
       placeholder="search" 
-      v-model.trim="store.query"
+      v-model.trim="store.searchingMovie"
       >
     </div>
 
     <button @click="$emit('searchMovie')">
       GO
     </button>
-    
+
   </div>
 
 
