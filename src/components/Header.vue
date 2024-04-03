@@ -5,7 +5,6 @@
     data(){
       return{
         store
-        
       }
     }
   }
@@ -14,7 +13,8 @@
 
 <template>
   
-  <button @click="store.counter++" class="btn btn-primary">incrementa</button>
+  <h1>BOOLFLIX</h1>
+
 
 </template>
 

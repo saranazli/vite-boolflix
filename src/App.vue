@@ -1,7 +1,7 @@
 <script>
 
   import Main from './components/Main.vue';
-  import Footer from './components/Footer.vue';
+  import Footer from './components/Header.vue';
 
   export default {
 

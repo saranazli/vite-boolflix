@@ -8,7 +8,25 @@
       return{
         store
       }
+    },
+    methods:{
+      getApi(){
+        axios.get(store.apiUrl)
+        .then(result=>{
+        this.store.cards = result.data.results;
+        console.log(this.store.cardsList);
+        })
+        console.log(store.cards)
+        .catch(error => {
+          console.log('error')
+        })
+      }
+    },
+    mounted(){
+      this.getApi()
     }
+
+
   }
 
 </script>
@@ -16,7 +34,6 @@
 <template>
   
   <div class="gen">
-    heho
     <h1>{{ store.counter }}</h1>
   </div>
 
