@@ -7,6 +7,5 @@ export const store = reactive ({
   cards: [],
   queryParams: {
     apy_key: '143eeaa2ea390065982ac4cac590ae6c',
-    query: ' matrix '
   }
 })

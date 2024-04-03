@@ -13,7 +13,13 @@
 
 <template>
   
-  <h1>BOOLFLIX</h1>
+  <div class="d-flex">
+    <h1>BOOLFLIX</h1>
+
+    <div>
+      <input type="text" class="form-control" placeholder="search">
+    </div>
+  </div>
 
 
 </template>

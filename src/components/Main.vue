@@ -1,7 +1,8 @@
 
 <script>
 
-  import { store } from '../assets/data/store'
+  import { store } from '../assets/data/store';
+  import axios from 'axios';
 
   export default{
     data() {
@@ -11,13 +12,17 @@
     },
     methods:{
       getApi(){
-        axios.get(store.apiUrl)
-        .then(result=>{
-        this.store.cards = result.data.results;
-        console.log(this.store.cardsList);
+        axios.get(store.apiUrl, {
+          params: {
+            api_key: '143eeaa2ea390065982ac4cac590ae6c',
+            query: 'cenerentola'
+          }
         })
-        console.log(store.cards)
-        .catch(error => {
+        .then(  result =>{
+          this.store.cards = result.data
+          console.log(store.cards)
+        })
+        .catch( error => {
           console.log('error')
         })
       }
