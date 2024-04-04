@@ -32,7 +32,8 @@
   <div class="col mb-3">
     <div class="mt-3">
       <div class="card-body">
-        <img :src="store.imgUrlSize + cardObj.poster_path" alt="poster">
+        <img v-if="!cardObj.poster_path" :src="store.myPoster" alt="no-pic">
+        <img v-else :src="store.imgUrlSize + cardObj.poster_path" alt="poster">
         <h5 class="card-title">{{ cardObj.title || cardObj.name }}</h5>
         <h6 class="card-title">{{ cardObj.original_title || cardObj.original_name }}</h6>
         <img class="flag" v-if="cardObj.original_language === 'en' " :src="store.imgEng" alt="en">
@@ -40,14 +41,14 @@
         <p class="text-center" v-else>{{ cardObj.original_language }}</p>
         <div>
           <i 
-          v-for="n in getStar()"
-          :key="n" 
+          v-for="rate in getStar()"
+          :key="rate"
           class="fa-solid fa-star"
           >
           </i>
           <i 
-          v-for="n in getStarEmpty()"
-          :key="n" 
+          v-for="rate in getStarEmpty()"
+          :key="rate" 
           class="fa-regular fa-star"
           >
           </i>

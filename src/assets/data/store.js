@@ -12,5 +12,6 @@ export const store = reactive ({
   movie: [],
   tv: [],
   imgEng: 'img/en.png',
-  imgIt: 'img/it.png'
+  imgIt: 'img/it.png',
+  myPoster: 'img/Summer_Movies-Guide_84837.webp'
 })
