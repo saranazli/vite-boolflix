@@ -19,6 +19,9 @@
     methods:{
       getStar(){
         return Math.ceil(this.cardObj.vote_average / 2)
+      },
+      getStarEmpty(){
+        return Math.floor( 5- this.cardObj.vote_average / 2)
       }
     }
 
@@ -37,11 +40,18 @@
         <p class="text-center" v-else>{{ cardObj.original_language }}</p>
         <div>
           <i 
-          v-for="n in 5 - getStar()"
+          v-for="n in getStar()"
           :key="n" 
           class="fa-solid fa-star"
           >
           </i>
+          <i 
+          v-for="n in getStarEmpty()"
+          :key="n" 
+          class="fa-regular fa-star"
+          >
+          </i>
+
         </div>
       </div>
     </div>
