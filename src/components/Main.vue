@@ -12,6 +12,14 @@
       return{
         store
       }
+    },
+    props:{
+      type: String
+    },
+    computed:{
+      title(){
+        return this.type === 'movie' ? 'Film' : 'Serie Tv'
+      }
     }
   }
 
@@ -22,7 +30,7 @@
   <div class="text-center my-5 container">
     <div class="row row-cols-4">
       <Card 
-        v-for=" (cardM, index) in store.cardsMovie" 
+        v-for=" (cardM, index) in store[type]" 
         :key="index" 
         :title="cardM.title"
         :original_title="cardM.original_title"

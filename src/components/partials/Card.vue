@@ -1,11 +1,20 @@
 
 <script>
+
+  import { store } from '../../assets/data/store'
   export default {
     props:{
-      title: String,
-      original_title: String,
-      original_language: String,
-      vote_average:  String
+      cardObj : Object
+    },
+    data(){
+      return{
+        store
+      }
+    },
+    computed:{
+      title(){
+        return this.type === 'movie' ? 'Film' : 'Serie Tv'
+      }
     }
   }
 </script>
@@ -14,11 +23,10 @@
   <div class="col mb-3">
     <div class="mt-3">
       <div class="card-body">
-        <h5 class="card-title">Prova</h5>
-        <h5 class="card-title">{{ title }}</h5>
-        <h6 class="card-title">{{ original_title }}</h6>
-        <p class="text-center">{{ original_language }}</p>
-        <h6 class="card-title">{{ vote_average }}</h6>
+        <h5 class="card-title">{{ cardObj.title || cardObj.name }}</h5>
+        <h6 class="card-title">{{ cardObj.original_title || cardObj.original_name }}</h6>
+        <p class="text-center">{{ cardObj.original_language }}</p>
+        <h6 class="card-title">{{ cardObj.vote_average }}</h6>
       </div>
     </div>
   </div>
