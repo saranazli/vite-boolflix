@@ -32,7 +32,7 @@
   <div class="col mb-3">
     <div class="mt-3">
       <div class="card-body">
-        <img v-if="!cardObj.poster_path" :src="store.myPoster" alt="no-pic">
+        <img class="my_poster" v-if="!cardObj.poster_path" :src="store.myPoster" alt="no-pic">
         <img v-else :src="store.imgUrlSize + cardObj.poster_path" alt="poster">
         <h5 class="card-title">{{ cardObj.title || cardObj.name }}</h5>
         <h6 class="card-title">{{ cardObj.original_title || cardObj.original_name }}</h6>
@@ -62,5 +62,9 @@
 <style lang="scss" scoped>
   img.flag{
     max-width: 25px;
+  }
+  img.my_poster{
+    width: 200px;
+    height: 300px;
   }
 </style>
