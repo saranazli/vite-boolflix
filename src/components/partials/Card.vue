@@ -12,6 +12,11 @@
       return{
         store
       }
+    },
+    methods:{
+      getStar(){
+        return Math.ceil(this.cardObj.vote_average / 2)
+      }
     }
 
   }
@@ -27,7 +32,10 @@
         <img class="flag" v-if="cardObj.original_language === 'en' " :src="store.imgEng" alt="en">
         <img class="flag" v-else-if="cardObj.original_language === 'it' " :src="store.imgIt" alt="it">
         <p class="text-center" v-else>{{ cardObj.original_language }}</p>
-        <p class="card-title">{{ cardObj.vote_average }}</p>
+        <p class="card-title">{{ getStar() }}</p>
+        <div>
+          
+        </div>
       </div>
     </div>
   </div>

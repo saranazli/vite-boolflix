@@ -2,11 +2,6 @@
 import { reactive } from "vue";
 
 export const store = reactive ({
-  //per il metodo di get movie e get tv
-  // cardsMovie: [],
-  // cardsSeries: [],
-  // per il metodo di get api con type
-  // searchingMovie: '',
   apiUrl: 'https://api.themoviedb.org/3/search/',
   imgUrlSize: 'http://image.tmdb.org/t/p/w300',
   apiParams: {
