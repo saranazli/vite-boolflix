@@ -32,14 +32,15 @@
   <div class="col mb-3">
     <div class="mt-3">
       <div class="card-body">
-        <img class="my_poster" v-if="!cardObj.poster_path" :src="store.myPoster" alt="no-pic">
-        <img v-else :src="store.imgUrlSize + cardObj.poster_path" alt="poster">
+        <img class="all_poster" v-if="!cardObj.poster_path" :src="store.myPoster" alt="no-pic">
+        <img class="all_poster" v-else :src="store.imgUrlSize + cardObj.poster_path" alt="poster">
         <h5 class="card-title">{{ cardObj.title || cardObj.name }}</h5>
         <h6 class="card-title">{{ cardObj.original_title || cardObj.original_name }}</h6>
         <img class="flag" v-if="cardObj.original_language === 'en' " :src="store.imgEng" alt="en">
         <img class="flag" v-else-if="cardObj.original_language === 'it' " :src="store.imgIt" alt="it">
         <p class="text-center" v-else>{{ cardObj.original_language }}</p>
         <div>
+          
           <i 
           v-for="rate in getStar()"
           :key="rate"
@@ -63,8 +64,8 @@
   img.flag{
     max-width: 25px;
   }
-  img.my_poster{
-    width: 200px;
-    height: 300px;
+  img.all_poster{
+    max-width: 200px;
+    min-height: 300px;
   }
 </style>

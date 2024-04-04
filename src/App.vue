@@ -54,4 +54,8 @@
 
   @use './assets/scss/main.scss';
 
+  body{
+  background-color: black;
+  }
+
 </style>

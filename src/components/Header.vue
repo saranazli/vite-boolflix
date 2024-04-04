@@ -13,20 +13,20 @@
 
 <template>
   
-  <div class="d-flex">
+  <div class="d-flex justify-content-between">
 
-    <h1>BOOLFLIX</h1>
+    <h1 class="me-4">BOOLFLIX</h1>
 
     <div>
       <input 
       type="text" 
-      class="form-control" 
+      class="form-control my_input" 
       placeholder="search" 
       v-model.trim="store.apiParams.query"
       >
     </div>
 
-    <button @click="$emit('startSearch')">
+    <button class="ms-4" @click="$emit('startSearch')">
       GO
     </button>
 
@@ -36,5 +36,14 @@
 </template>
 
 <style lang="scss" scoped>
+
+  @use '../assets/scss/main.scss';
+
+  input.my_input{
+    line-height: 30px;
+    border: solid;
+    border-color: palevioletred;
+    font-size: 20px;
+  }
 
 </style>
