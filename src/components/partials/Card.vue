@@ -39,6 +39,7 @@
         <img class="flag" v-if="cardObj.original_language === 'en' " :src="store.imgEng" alt="en">
         <img class="flag" v-else-if="cardObj.original_language === 'it' " :src="store.imgIt" alt="it">
         <p class="text-center" v-else>{{ cardObj.original_language }}</p>
+        <p class="text-center description">{{ cardObj.overview }}</p>
         <div>
           
           <i 
@@ -47,6 +48,7 @@
           class="fa-solid fa-star"
           >
           </i>
+
           <i 
           v-for="rate in getStarEmpty()"
           :key="rate" 
@@ -67,5 +69,12 @@
   img.all_poster{
     max-width: 200px;
     min-height: 300px;
+  }
+  .description{
+    overflow: hidden;
+    max-height: 100px;
+    &:hover{
+      overflow-y: auto;
+    }
   }
 </style>
