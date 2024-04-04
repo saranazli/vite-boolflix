@@ -9,10 +9,12 @@ export const store = reactive ({
   // searchingMovie: '',
   apiUrl: 'https://api.themoviedb.org/3/search/',
   apiParams: {
-    apy_key: '143eeaa2ea390065982ac4cac590ae6c',
+    api_key: '143eeaa2ea390065982ac4cac590ae6c',
     query: '',
     original_language: 'it-IT'
   },
   movie: [],
-  tv: []
+  tv: [],
+  imgEng: 'img/en.png',
+  imgIt: 'img/it.png'
 })

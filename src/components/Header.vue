@@ -22,11 +22,11 @@
       type="text" 
       class="form-control" 
       placeholder="search" 
-      v-model.trim="store.searchingMovie"
+      v-model.trim="store.apiParams.query"
       >
     </div>
 
-    <button @click="$emit('searchMovie')">
+    <button @click="$emit('startSearch')">
       GO
     </button>
 

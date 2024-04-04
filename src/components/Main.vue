@@ -2,19 +2,19 @@
 <script>
 
   import { store } from '../assets/data/store';
-  import Card from '../components/partials/Card.vue';
+  import Card from './partials/Card.vue';
 
   export default{
     components: {
       Card
     },
+    props:{
+      type: String
+    },
     data(){
       return{
         store
       }
-    },
-    props:{
-      type: String
     },
     computed:{
       title(){
@@ -28,14 +28,12 @@
 <template>
   
   <div class="text-center my-5 container">
+    <h3> {{ title }} </h3>
     <div class="row row-cols-4">
       <Card 
-        v-for=" (cardM, index) in store[type]" 
-        :key="index" 
-        :title="cardM.title"
-        :original_title="cardM.original_title"
-        :original_language="cardM.original_language"
-        :vote_average="cardM.vote_average "
+        v-for=" card in store[type]" 
+        :key="card.id" 
+        :cardObj="card"
       />
     </div>
   </div>

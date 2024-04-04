@@ -17,6 +17,7 @@
         store
       }
     },
+    
     methods:{
 
       getApi(type){
@@ -73,9 +74,11 @@
 
 <template>
 
-  <Header @searchMovie="startSearch" />
+  <Header @startSearch="startSearch" />
 
-  <Main />
+  <Main type="movie" v-if="store.movie.length > 0"/>
+  <Main type="tv" v-if="store.tv.length > 0"/>
+
 
 </template>
 
